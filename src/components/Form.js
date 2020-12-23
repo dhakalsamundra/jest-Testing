@@ -16,15 +16,16 @@ const Register = () => {
   const onSubmit = e => {
     e.preventDefault()
     const emailRegx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+    const avaiRegx = /^[0-9\.\-\/]+$/
     if (name === '') {
       document.getElementById('name-error').innerHTML = "Mandatory Field!";
     } else if (name.length > 101) {
       document.getElementById('name-error').innerHTML = "Maximun length is 100.";
-    } else if ( availability && !availability.match("^[0-9]+$")){
+    } else if ( availability && !availability.match(avaiRegx)){
       document.getElementById('avai-error').innerHTML = "Must be a number.";
     } 
     else if ( email && !email.match(emailRegx)){
-      document.getElementById('email-error').innerHTML = "There must be @ with proper format of email.";
+      document.getElementById('email-error').innerHTML = "Write a proper format of email address";
     }
     else {
       window.alert('Your data has been saved to our database..')
@@ -44,7 +45,7 @@ const Register = () => {
       </h1>
       <form onSubmit={onSubmit} id='form'>
         <div className='form-group'>
-          <label>Name</label>
+          <label>Full Name</label>
           <input
             id='name'
             type='text'
@@ -82,13 +83,14 @@ const Register = () => {
         </div>
 
         <div className='form-group'>
-        <label>Flexiable</label><br></br>
         <input type="checkbox" id='flexiable' name="Flexible" value={flexiable} onChange={onChange} />
+        <label>Flexiable</label><br></br>
         </div>
 
         <input
           type='submit'
           value='Register'
+          id='button'
           className='btn btn-primary btn-block'
         />
       </form>
