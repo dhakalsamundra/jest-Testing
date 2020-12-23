@@ -13,7 +13,9 @@ test('render content', () => {
 describe('<Form />', () => {
     let component
     beforeEach(() => {
-        window.alert = () => {};
+        global.alert = jest.fn()
+        //Either use the global.alert instead of window.alert becasue node accepts global or use the code mentioned below.
+        /*  jest.spyOn(window, 'alert').mockImplementation(() => {});*/
         component = render(<Form />)
     })
 
@@ -76,5 +78,29 @@ describe('<Form />', () => {
         fireEvent.submit(form)
         const div = component.container.querySelector('#email-error')
         expect(div).toHaveTextContent('There must be @ with proper format of email.')
+    })
+
+    test('save the input data', () => {
+        const form = component.container.querySelector('form')
+        const nameField = component.container.querySelector('#name')
+        const emailField = component.container.querySelector('#email')
+        const availabilityField = component.container.querySelector('#availability')
+        const flexiableField = component.container.querySelector('#flexiable')
+
+        fireEvent.change(nameField, {
+            target: { value: 'Samundra'}
+        })
+        fireEvent.change(emailField, {
+            target: { value: 'xx@gmail.com'}
+        })
+        fireEvent.change(availabilityField, {
+            target: { value: 123}
+        })
+        fireEvent.change(flexiableField, {
+            target: { value: true}
+        })
+        fireEvent.submit(form)
+
+        expect(window.alert).toBeCalledWith('Your data has been saved to our database..');
     })
 })
