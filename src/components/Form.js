@@ -12,20 +12,20 @@ const Register = () => {
   const { name, email, availability, flexiable } = user
 
   const onChange = e => setUser({ ...user, [e.target.name]: e.target.value })
-  
+
   const onSubmit = e => {
     e.preventDefault()
     const emailRegx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
-    const avaiRegx = /^[0-9\.\-\/]+$/
+    const avaiRegx = /^[0-9.\-/]+$/
     if (name === '') {
-      document.getElementById('name-error').innerHTML = "Mandatory Field!";
+      document.getElementById('name-error').innerHTML = 'Mandatory Field!'
     } else if (name.length > 101) {
-      document.getElementById('name-error').innerHTML = "Maximun length is 100.";
+      document.getElementById('name-error').innerHTML = 'Maximun length is 100.'
     } else if ( availability && !availability.match(avaiRegx)){
-      document.getElementById('avai-error').innerHTML = "Must be a number.";
-    } 
+      document.getElementById('avai-error').innerHTML = 'Must be a number.'
+    }
     else if ( email && !email.match(emailRegx)){
-      document.getElementById('email-error').innerHTML = "Write a proper format of email address";
+      document.getElementById('email-error').innerHTML = 'Write a proper format of email address'
     }
     else {
       window.alert('Your data has been saved to our database..')
@@ -34,9 +34,9 @@ const Register = () => {
         email: '',
         availability: '',
         flexiable: false
-      });
-      }
+      })
     }
+  }
 
   return (
     <div className='form-container'>
@@ -56,7 +56,7 @@ const Register = () => {
           <span id='name-error' className='text-danger'></span>
 
         </div>
-        
+
         <div className='form-group'>
           <label>Email Address</label>
           <input
@@ -83,8 +83,8 @@ const Register = () => {
         </div>
 
         <div className='form-group'>
-        <input type="checkbox" id='flexiable' name="Flexible" value={flexiable} onChange={onChange} />
-        <label>Flexiable</label><br></br>
+          <input type="checkbox" id='flexiable' name="Flexible" value={flexiable} onChange={onChange} />
+          <label>Flexiable</label><br></br>
         </div>
 
         <input
