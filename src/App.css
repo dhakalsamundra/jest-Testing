@@ -20,7 +20,11 @@ body {
 }
 
 .text-center {
+  font-weight: bold;
   text-align: center;
+}
+.text-danger {
+  color: red;
 }
 
 .text-primary {
@@ -64,8 +68,6 @@ input {
 
 input[type='text'],
 input[type='email'],
-input[type='password'],
-input[type='date'],
 select,
 textarea {
   display: block;
