@@ -77,7 +77,7 @@ describe('<Form />', () => {
     })
     fireEvent.submit(form)
     const div = component.container.querySelector('#email-error')
-    expect(div).toHaveTextContent('There must be @ with proper format of email.')
+    expect(div).toHaveTextContent('Write a proper format of email address')
   })
 
   test('save the input data', () => {
