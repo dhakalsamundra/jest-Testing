@@ -27,7 +27,7 @@ const Register = () => {
       document.getElementById('email-error').innerHTML = "There must be @ with proper format of email.";
     }
     else {
-      window.alert('you data has been saved to our database..')
+      window.alert('Your data has been saved to our database..')
       setUser({
         name: '',
         email: '',
