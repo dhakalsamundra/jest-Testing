@@ -1,7 +1,7 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
 import { render, fireEvent } from '@testing-library/react'
-import Form from './Form'
+import Form from '../components/Form'
 
 
 test('render content', () => {
