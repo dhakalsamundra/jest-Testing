@@ -35,6 +35,7 @@ const Register = () => {
         availability: '',
         flexiable: false
       })
+      location.reload()
     }
   }
 
