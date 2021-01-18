@@ -31,11 +31,28 @@ describe('Blog app', function () {
   })
 
   it('Maximum character length is 100.', () => {
+    cy.get('#name').type('Samundrajkafksadbfksadjbfkagbsakjgbskjfgbaksfjgbaksfjgbasfkjgabsfkjgabskjgbfsakgjbfsakjgbdskjbgsjkdbgskajbgsajkgabskjgbaskfjg')
+    cy.get('#button').click()
+
+    // cy.on('window:confirm', () => true)
+    cy.contains('Maximun length is 100.')
+
+  })
+
+  it('Availiability only allowed the number in between and the  minus is not a minus, its a range between the number', () => {
     cy.get('#name').type('Samundra')
     cy.get('#availability').type('10-20')
     cy.get('#button').click()
 
     cy.on('window:confirm', () => true)
+  })
+
+  it('Availiability only allowed the number in between and the  minus is not a minus, its a range between the number. Other sign will not work', () => {
+    cy.get('#name').type('Samundra')
+    cy.get('#availability').type('10+20')
+    cy.get('#button').click()
+
+    cy.contains('Must be a number.')
   })
 
   it('Save the data if mandatory field is provided', () => {
