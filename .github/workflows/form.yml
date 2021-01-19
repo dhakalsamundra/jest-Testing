@@ -28,9 +28,6 @@ jobs:
       - name: test
         run: npm run test
 
-      - name: test
-        run: npm run test:e2e
-
       - uses: actions/checkout@v2
         with:
           fetch-depth: '0'
