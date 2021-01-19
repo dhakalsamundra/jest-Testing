@@ -10,7 +10,7 @@ describe('Blog app', function () {
   it('Do not save the enpty data', () => {
     cy.get('#button').click()
 
-    cy.contains('sasd Field!')
+    cy.contains('Mandatory Field!')
   })
 
   it('If email is mentioned, it must be the valid email', () => {
