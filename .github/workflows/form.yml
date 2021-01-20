@@ -25,8 +25,8 @@ jobs:
       - name: lint
         run: npm run eslint
 
-      - name: test
-        run: npm run test
+      - name: test:coverage
+        run: npm run test:coverage
 
       - uses: actions/checkout@v2
         with:
