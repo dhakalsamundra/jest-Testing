@@ -52,7 +52,7 @@ describe('<Form />', () => {
     const AvaiField = component.container.querySelector('#availability')
 
     fireEvent.change(nameField, {
-      target: { value: 'Samundra' }
+      target: { value: 'sasas' }
     })
 
     fireEvent.change(AvaiField, {
@@ -60,7 +60,7 @@ describe('<Form />', () => {
     })
     fireEvent.submit(form)
     const div = component.container.querySelector('#avai-error')
-    expect(div).toHaveTextContent('Must be a number')
+    expect(div).toHaveTextContent('Must be a samudra saeed')
   })
 
   test('should input the valid email address.', () => {
