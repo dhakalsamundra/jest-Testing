@@ -10,8 +10,7 @@ describe('Blog app', function () {
   it('Do not save the enpty data', () => {
     cy.get('#button').click()
 
-    cy.contains('Mandatory Field!')
-  })
+    cy.contains('Mandatory Field!')  })
 
   it('If email is mentioned, it must be the valid email', () => {
     cy.get('#name').type('Samundra')
@@ -31,11 +30,11 @@ describe('Blog app', function () {
   })
 
   it('Maximum character length is 100.', () => {
-    cy.get('#name').type('Samundra')
+    cy.get('#name').type('Samundradsadasdasdasdasdasdasdasdasdasdasdassdasdasdasdasdasdasdasdasdasdasdsadasdasdasdasdasdasdasdasdasdsadassdas')
     cy.get('#availability').type('10-20')
     cy.get('#button').click()
 
-    cy.on('window:confirm', () => true)
+    cy.contains('Maximun length is 100.')
   })
 
   it('Save the data if mandatory field is provided', () => {
