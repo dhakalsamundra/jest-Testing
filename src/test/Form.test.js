@@ -2,6 +2,7 @@ import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
 import { render, fireEvent } from '@testing-library/react'
 import Form from '../components/Form'
+import renderer from 'react-test-renderer'
 
 
 test('render content', () => {
@@ -9,7 +10,10 @@ test('render content', () => {
   expect(component.container).toHaveTextContent('Account Register')
 })
 
-
+test('Initial snapshot', () => {
+  const tree = renderer.create(<Form />).toJSON()
+  expect(tree).toMatchSnapshot()
+})
 describe('<Form />', () => {
   let component
   beforeEach(() => {
@@ -52,7 +56,7 @@ describe('<Form />', () => {
     const AvaiField = component.container.querySelector('#availability')
 
     fireEvent.change(nameField, {
-      target: { value: 'sasas' }
+      target: { value: 'Samundra' }
     })
 
     fireEvent.change(AvaiField, {
@@ -60,7 +64,7 @@ describe('<Form />', () => {
     })
     fireEvent.submit(form)
     const div = component.container.querySelector('#avai-error')
-    expect(div).toHaveTextContent('Must be a samudra saeed')
+    expect(div).toHaveTextContent('Must be a number')
   })
 
   test('should input the valid email address.', () => {
