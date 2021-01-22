@@ -54,7 +54,7 @@ describe('<Form />', () => {
     const flexiableField = component.container.querySelector('#flexiable')
 
     fireEvent.change(nameField, {
-      target: { value: 'sas' }
+      target: { value: '' }
     })
     fireEvent.change(emailField, {
       target: { value: 'xx@gmail.com' }
