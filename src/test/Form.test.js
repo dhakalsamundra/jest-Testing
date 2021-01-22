@@ -44,7 +44,7 @@ describe('<Form />', () => {
     })
     fireEvent.submit(form)
 
-    expect(nameField).toBeInTheDocument('Samundra')
+    expect(nameField).toBeInTheDocument('priya')
     expect(emailField).toBeInTheDocument('xx@gmail.com')
     expect(availabilityField).toBeInTheDocument(123)
     expect(flexiableField).toBeInTheDocument(true)
