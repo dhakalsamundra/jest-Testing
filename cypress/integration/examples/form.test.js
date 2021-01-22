@@ -13,7 +13,7 @@ describe('Blog app', function () {
     cy.contains('Mandatory Field!')  })
 
   it('If email is mentioned, it must be the valid email', () => {
-    cy.get('#name').type('Samundra')
+    cy.get('#name').type('Sandesh')
     cy.get('#email').type('asc')
     cy.get('#button').click()
 
