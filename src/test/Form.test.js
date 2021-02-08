@@ -85,7 +85,7 @@ describe('<Form />', () => {
     })
     fireEvent.submit(form)
     const div = component.container.querySelector('#avai-error')
-    expect(div).toHaveTextContent('Must be a samudra')
+    expect(div).toHaveTextContent('Must be a number')
   })
 
   test('should input the valid email address.', () => {
