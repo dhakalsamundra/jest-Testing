@@ -20,7 +20,7 @@ describe('<Form />', () => {
   })
 
   test('all input field are render', () => {
-    const form = component.container.querySelector('form')
+    const form = component.container.querySelector('#form')
     const nameField = component.container.querySelector('#name')
     const emailField = component.container.querySelector('#email')
     const availabilityField = component.container.querySelector('#availability')
@@ -33,7 +33,7 @@ describe('<Form />', () => {
       target: { value: 'xx@gmail.com' }
     })
     fireEvent.change(availabilityField, {
-      target: { value: 123 }
+      target: { value: 10 }
     })
     fireEvent.change(flexiableField, {
       target: { value: true }

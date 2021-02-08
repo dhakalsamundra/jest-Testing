@@ -41,9 +41,14 @@
     ]
   },
   "devDependencies": {
+    "@cucumber/cucumber": "^7.0.0",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
+    "cypress-cucumber-preprocessor": "^4.0.0",
     "eslint-plugin-cypress": "^2.11.2",
     "eslint-plugin-jest": "^24.1.3"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
   }
 }
